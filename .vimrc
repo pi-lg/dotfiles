@@ -139,7 +139,11 @@ map <C-p> :FZF~<CR>
 " navigate between tmux and vim splits seemlessly
 Plugin 'christoomey/vim-tmux-navigator'
 
-noremap Q :q!<CR>
+" make <C-Q> reach vim application
+silent !stty -ixon > /dev/null 2>/dev/null
+nmap <C-Q> :q!<CR>
+
+" remap <C-I> for yanking or pasting to/from clipboard
 noremap <C-I> "+
 
 Plugin 'junegunn/rainbow_parentheses.vim'
