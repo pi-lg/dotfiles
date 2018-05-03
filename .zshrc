@@ -17,7 +17,10 @@ if ! zgen saved; then
 
   # theme
 	#zgen load agnoster/agnoster-zsh-theme agnoster.zsh-theme
-	zgen oh-my-zsh themes/agnoster
+	#zgen oh-my-zsh themes/agnoster
+
+	# install ttf-ancient-fonts to use bullet-train
+	zgen load caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 #  zgen load joel-porquet/zsh-dircolors-solarized
 
   # save all to init script
@@ -187,3 +190,12 @@ export PATH="/home/mbr/git/toolbox/bin:/home/mbr/anaconda2/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# options for bullet-train theme
+BULLETTRAIN_PROMPT_ORDER=(
+  time
+  context
+  virtualenv
+  dir
+  git
+)
