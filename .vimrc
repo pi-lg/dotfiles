@@ -64,14 +64,14 @@ let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 "python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
+"py << EOF
+"import os
+"import sys
+"if 'VIRTUAL_ENV' in os.environ:
+"  project_base_dir = os.environ['VIRTUAL_ENV']
+"  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"  execfile(activate_this, dict(__file__=activate_this))
+"EOF
 
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
@@ -87,7 +87,8 @@ if has('gui_running')
 else
   colorscheme zenburn
 endif
-call togglebg#map("<F5>")
+"doesn't work anymore
+"call togglebg#map("<F5>")
 
 Plugin 'scrooloose/nerdtree'
 
@@ -99,7 +100,8 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
-source ~/.vim/vim-trailing-whitespace/plugin/trailing-whitespace.vim
+" to remove trailing whitespaces: run :StripWhitespace in vim
+Plugin 'ntpeters/vim-better-whitespace'
 
 " map the keys 'jk' to the Escape key to improve efficiency.
 imap jk <Esc>
