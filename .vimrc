@@ -36,9 +36,12 @@ nnoremap <space> za
 Plugin 'tmhedberg/SimpylFold'
 let g:SimpylFold_docstring_preview=1
 
+" tab settings #########################################
 set tabstop=2
 set shiftwidth=2
-au BufNewFile,BufRead *.py
+
+"au BufNewFile,BufRead *.py
+autocmd FileType python
     \ set tabstop=4 |
     \ set softtabstop=4 |
     \ set shiftwidth=4 |
@@ -47,10 +50,20 @@ au BufNewFile,BufRead *.py
     \ set autoindent |
     \ set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css, *.sql
-    \ set tabstop=2 |
-    \ set softtabstop=2 |
-    \ set shiftwidth=2
+autocmd FileType sql
+		\ set tabstop=2 |
+		\ set softtabstop=2 |
+		\ set shiftwidth=2 |
+		\ set expandtab |
+		\ set autoindent
+
+autocmd FileType javascript
+		\ set tabstop=2 |
+		\ set softtabstop=2 |
+		\ set shiftwidth=2 |
+		\ set expandtab |
+		\ set autoindent
+"#######################################################
 
 Plugin 'vim-scripts/indentpython.vim'
 
