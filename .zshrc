@@ -42,12 +42,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export HISTSIZE=100000000
 export SAVEHIST=100000000
-
 #eval `dircolors ${HOME}/.zgen/joel-porquet/zsh-dircolors-solarized-master/dircolors-solarized/dircolors.256dark`
 
 bindkey -v
 
-DEFAULT_USER="mbr"
+DEFAULT_USER="paul"
 prompt_context(){}
 
 # print_hostname() {
@@ -58,7 +57,7 @@ prompt_context(){}
 #     echo " ${host_name} "
 #   fi
 # }
-# 
+#
 # print_rprompt() {
 #   host_name=$(hostname -s)
 #   if [[ "${host_name}" == 'mbr-ThinkPad-T430s' ]]; then
@@ -84,7 +83,7 @@ export EDITOR=vim
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/mbr/.oh-my-zsh
+export ZSH=/home/paul/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -183,7 +182,7 @@ if [ -f ~/.shell_aliases ]; then
 fi
 
 # added by Anaconda2 4.3.1 installer
-export PATH="/home/mbr/git/toolbox/bin:/home/mbr/anaconda2/bin:$PATH"
+export PATH="/home/paul/git/toolbox/bin:/home/paul/.local/lib/python3.6/bin:$PATH"
 
 . ~/git/toolbox/etc/git-shortcuts
 
