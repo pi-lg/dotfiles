@@ -113,6 +113,10 @@ Plugin 'tpope/vim-fugitive'
 
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
+set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+
 " to remove trailing whitespaces: run :StripWhitespace in vim
 Plugin 'ntpeters/vim-better-whitespace'
 
