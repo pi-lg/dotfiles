@@ -215,3 +215,7 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+
+powerline-daemon
+powerline-config tmux setup
