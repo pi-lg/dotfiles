@@ -219,3 +219,8 @@ unset __conda_setup
 
 powerline-daemon
 powerline-config tmux setup
+
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/paul/.sdkman"
+[[ -s "/home/paul/.sdkman/bin/sdkman-init.sh" ]] && source "/home/paul/.sdkman/bin/sdkman-init.sh"
