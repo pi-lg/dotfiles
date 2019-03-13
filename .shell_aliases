@@ -2,9 +2,11 @@
 alias dirac='ssh paul@dirac.lab.m6r.eu'
 alias curie='ssh paul@curie.lab.ams2.m6r.eu'
 alias meitner='ssh paul@meitner.lab.ams2.m6r.eu'
-alias mbr="cd ~/Dropbox/Arbeit/mbr-targeting/paul@mbr-targeting.com; sudo openvpn mbr.conf" 
+alias moore='ssh paul@moore.lab.dc19.m6r.eu'
+alias mbr="cd ~/Dropbox/Arbeit/mbr-targeting/paul@mbr-targeting.com; sudo openvpn mbr.conf"
 pmeitner='paul@meitner.lab.ams2.m6r.eu'
 mmeitner='monitoring@meitner.lab.ams2.m6r.eu'
+pmoore='paul@moore.lab.dc19.m6r.eu'
 
 # some more ls aliases
 alias ll='ls -alF'
