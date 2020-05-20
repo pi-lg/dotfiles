@@ -223,6 +223,11 @@ unset __conda_setup
 powerline-daemon
 powerline-config tmux setup
 
+mkcdir ()
+{
+	mkdir -p -- "$1" &&
+		cd -P -- "$1"
+}
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/paul/.sdkman"
