@@ -44,6 +44,9 @@ export HISTSIZE=100000000
 export SAVEHIST=100000000
 #eval `dircolors ${HOME}/.zgen/joel-porquet/zsh-dircolors-solarized-master/dircolors-solarized/dircolors.256dark`
 
+KUBECONFIG="/home/paul/Dropbox/Arbeit/mbr-targeting/kubernetes-config"
+export KUBECONFIG
+
 bindkey -v
 
 DEFAULT_USER="paul"
