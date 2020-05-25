@@ -185,9 +185,9 @@ if [ -f ~/.shell_aliases ]; then
 fi
 
 # added by Anaconda2 4.3.1 installer
-export PATH="/home/paul/git/toolbox/bin:/home/paul/.local/lib/python3.6/bin:$PATH"
+export PATH="/home/paul/git/toolbox/bin:/home/paul/.local/lib/python3.7/bin:$PATH"
 
-. ~/git/toolbox/etc/git-shortcuts
+# . ~/git/toolbox/etc/git-shortcuts
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -220,15 +220,16 @@ unset __conda_setup
 # <<< conda init <<<
 
 
-powerline-daemon
-powerline-config tmux setup
+# powerline-daemon
+# powerline-config tmux setup
+
+if [[ -r ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+
 
 mkcdir ()
 {
 	mkdir -p -- "$1" &&
 		cd -P -- "$1"
 }
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/paul/.sdkman"
-[[ -s "/home/paul/.sdkman/bin/sdkman-init.sh" ]] && source "/home/paul/.sdkman/bin/sdkman-init.sh"
