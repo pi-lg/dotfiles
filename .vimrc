@@ -26,6 +26,9 @@ nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
 
+" paste without yanking in visual mode
+vnoremap p "_dP
+
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
@@ -161,7 +164,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 " nmap Q :q!<CR>
 
 " remap <C-I> for yanking or pasting to/from clipboard
-noremap <C-I> "+
+" noremap <C-I> "+
 
 Plugin 'junegunn/rainbow_parentheses.vim'
 
