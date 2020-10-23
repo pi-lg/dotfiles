@@ -14,6 +14,33 @@ Plugin 'gmarik/Vundle.vim'
 " Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
 
 
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'masukomi/vim-markdown-folding'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" to remove trailing whitespaces: run :StripWhitespace in vim
+Plugin 'ntpeters/vim-better-whitespace'
+" show characters to target with f
+Plugin 'unblevable/quick-scope'
+" Comment with hotkeys
+Plugin 'scrooloose/nerdcommenter'
+" fuzzysearch
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" navigate between tmux and vim splits seemlessly
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'junegunn/rainbow_parentheses.vim'
+" paste things with <C-c><C-c> to tmux, screen, Python, R, etc (<C-c><C-v> to select output programm)
+Plugin 'jpalardy/vim-slime'
+
 " all of your plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -66,16 +93,30 @@ autocmd FileType javascript
 		\ set shiftwidth=2 |
 		\ set expandtab |
 		\ set autoindent
+
+" Markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd FileType markdown
+		\ set autoindent |
+		\ set noexpandtab |
+		"\ set softtabstop=2 |
+		"\ set shiftwidth=2 |
+		\ set conceallevel=2
+
+let g:markdown_fenced_languages = ['sql', 'python', 'py=python', 'javascript', 'js=javascript', 'json', 'xml']
+
+
 "#######################################################
 
-Plugin 'vim-scripts/indentpython.vim'
+source ~/.vim/bundle/renumber/plugin/renumber.vim
+
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
-Bundle 'Valloric/YouCompleteMe'
-
+" You complete me settings
+let g:ycm_filetype_blacklist = {}
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -89,14 +130,12 @@ map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 "  execfile(activate_this, dict(__file__=activate_this))
 "EOF
 
-Plugin 'vim-syntastic/syntastic'
-Plugin 'nvie/vim-flake8'
 
+" syntastic settings
 let python_highlight_all=1
 syntax on
 
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+" color setting for Zenburn and solarized
 if has('gui_running')
   set background=dark
   colorscheme solarized
@@ -106,74 +145,46 @@ endif
 "doesn't work anymore
 "call togglebg#map("<F5>")
 
-Plugin 'scrooloose/nerdtree'
 
-Plugin 'jistr/vim-nerdtree-tabs'
-
+" setting for Nerdtree?
 set nu
 
-Plugin 'tpope/vim-fugitive'
 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+" settings for powerline plugin
 set  rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
 
-" to remove trailing whitespaces: run :StripWhitespace in vim
-Plugin 'ntpeters/vim-better-whitespace'
 
 " map the keys 'jk' to the Escape key to improve efficiency.
 imap jk <Esc>
 
-" show characters to target with f
-Plugin 'unblevable/quick-scope'
-
-" Comment with hotkeys
-Plugin 'scrooloose/nerdcommenter'
-
+" settings for nerdcommenter:
 " Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
-
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
-
 " Set a language to use its alternate delimiters by default
 "let g:NERDAltDelims_java = 1
-
 " Add your own custom formats or override the defaults
 let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
-
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
-" fuzzysearch
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+" settings for fzf
 " ctrl-p with FZF
 map <C-p> :FZF~<CR>
 
-" navigate between tmux and vim splits seemlessly
-Plugin 'christoomey/vim-tmux-navigator'
-
 " nmap Q :q!<CR>
 
-" remap <C-I> for yanking or pasting to/from clipboard
-" noremap <C-I> "+
-
-Plugin 'junegunn/rainbow_parentheses.vim'
-
-" paste things with <C-c><C-c> to tmux, screen, Python, R, etc (<C-c><C-v> to select output programm)
-Plugin 'jpalardy/vim-slime'
-"configure slime
+" configure vim-slime
 let g:slime_target = "tmux"
 
-" rainbow par
+" settings for rainbow-parentheses
 augroup rainbow_lisp
   autocmd!
   autocmd FileType lisp,clojure,scheme RainbowParentheses
@@ -188,3 +199,15 @@ set showcmd
 
 " Highlight current line
 set cursorline
+
+" call plug#begin('~/.vim/plugged')
+" Plug 'https://github.com/masukomi/vim-markdown-folding'
+" " Initialize plugin system
+" call plug#end()
+
+set nocompatible
+if has("autocmd")
+	filetype plugin indent on
+endif
+
+source ~/.vim/filetype.vim
