@@ -229,3 +229,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# autojump - see: https://github.com/wting/autojump
+[[ -s /home/paul/.autojump/etc/profile.d/autojump.sh ]] && source /home/paul/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
+
