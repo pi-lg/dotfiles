@@ -184,8 +184,6 @@ if [ -f ~/.shell_aliases ]; then
     . ~/.shell_aliases
 fi
 
-# added by Anaconda2 4.3.1 installer
-export PATH="/home/paul/git/toolbox/bin:/home/paul/.local/lib/python3.7/bin:$PATH"
 
 # . ~/git/toolbox/etc/git-shortcuts
 
@@ -202,30 +200,12 @@ BULLETTRAIN_PROMPT_ORDER=(
   git
 )
 
-# added by Anaconda3 5.3.0 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/paul/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/paul/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/paul/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/paul/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
-
 # powerline-daemon
 # powerline-config tmux setup
 
-if [[ -r ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
+# if [[ -r ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+#     source ~/.local/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
+# fi
 
 
 mkcdir ()
@@ -233,3 +213,19 @@ mkcdir ()
 	mkdir -p -- "$1" &&
 		cd -P -- "$1"
 }
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/paul/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/paul/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/paul/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/paul/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

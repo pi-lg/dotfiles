@@ -16,7 +16,7 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'masukomi/vim-markdown-folding'
+" Plugin 'masukomi/vim-markdown-folding'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
@@ -101,14 +101,15 @@ autocmd FileType markdown
 		\ set noexpandtab |
 		"\ set softtabstop=2 |
 		"\ set shiftwidth=2 |
-		\ set conceallevel=2
+		\ set conceallevel=2 |
+		\ set foldexpr=NestedMarkdownFolds()
 
 let g:markdown_fenced_languages = ['sql', 'python', 'py=python', 'javascript', 'js=javascript', 'json', 'xml']
 
 
 "#######################################################
 
-source ~/.vim/bundle/renumber/plugin/renumber.vim
+" source ~/.vim/bundle/renumber/plugin/renumber.vim
 
 
 " au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -199,11 +200,6 @@ set showcmd
 
 " Highlight current line
 set cursorline
-
-" call plug#begin('~/.vim/plugged')
-" Plug 'https://github.com/masukomi/vim-markdown-folding'
-" " Initialize plugin system
-" call plug#end()
 
 set nocompatible
 if has("autocmd")
