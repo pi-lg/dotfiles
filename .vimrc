@@ -41,6 +41,18 @@ Plugin 'junegunn/rainbow_parentheses.vim'
 " paste things with <C-c><C-c> to tmux, screen, Python, R, etc (<C-c><C-v> to select output programm)
 Plugin 'jpalardy/vim-slime'
 
+" Plugins to use vim as C++ ide
+Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'LucHermitte/lh-style'
+Plugin 'LucHermitte/lh-tags'
+Plugin 'LucHermitte/lh-dev'
+Plugin 'LucHermitte/lh-brackets'
+Plugin 'LucHermitte/searchInRuntime'
+Plugin 'LucHermitte/mu-template'
+Plugin 'tomtom/stakeholders_vim'
+Plugin 'LucHermitte/alternate-lite'
+Plugin 'LucHermitte/lh-cpp'
+
 " all of your plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -52,6 +64,13 @@ nnoremap <c-j> <c-w><c-j>
 nnoremap <c-k> <c-w><c-k>
 nnoremap <c-l> <c-w><c-l>
 nnoremap <c-h> <c-w><c-h>
+
+" lh-cpp remappings
+nmap <c-n> <Plug>MarkersJumpF
+nmap <A-l><S-Del> <Plug>MarkersJumpB
+nmap <A-l>$ <Plug>MarkersCloseAllAndJumpToLast
+nmap <A-L><End> <Plug>MarkersJumpOutside
+nmap <A-L><Ins> <Plug>MarkersMark
 
 " paste without yanking in visual mode
 vnoremap p "_dP
