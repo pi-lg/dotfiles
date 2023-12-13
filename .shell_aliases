@@ -1,15 +1,20 @@
 # mbr-aliases
-alias dirac='ssh paul@dirac.lab.m6r.eu'
-alias curie='ssh paul@curie.lab.ams2.m6r.eu'
-alias meitner='ssh paul@meitner.lab.ams2.m6r.eu'
-alias moore='ssh paul@moore.lab.dc19.m6r.eu'
 alias mbr="cd ~/Dropbox/Arbeit/mbr-targeting/paul@mbr-targeting.com; sudo openvpn mbr.conf"
-pmeitner='paul@meitner.lab.ams2.m6r.eu'
-mmeitner='monitoring@meitner.lab.ams2.m6r.eu'
-pmoore='paul@moore.lab.dc19.m6r.eu'
+
+#lvim
+alias vim='/home/paul/.local/bin/lvim'
 
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# git
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+
 alias fp='readlink -f $1'
+
+# this is for vcpkg, a C++ package manager
+alias vcpkg='/home/paul/vcpkg/vcpkg'
