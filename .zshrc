@@ -79,7 +79,7 @@ prompt_context(){}
 setopt hist_ignorealldups
 
 # switch to vim cmd mode like in .vimrc
-bindkey -M viins 'jk' vi-cmd-mode
+# bindkey -M viins 'jk' vi-cmd-mode
 
 export EDITOR=vim
 # If you come from bash you might have to change your $PATH.

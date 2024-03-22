@@ -177,7 +177,7 @@ set t_Co=256
 
 
 " map the keys 'jk' to the Escape key to improve efficiency.
-imap jk <Esc>
+" imap jk <Esc>
 
 " settings for nerdcommenter:
 " Add spaces after comment delimiters by default
