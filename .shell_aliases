@@ -18,3 +18,5 @@ alias fp='readlink -f $1'
 
 # this is for vcpkg, a C++ package manager
 alias vcpkg='/home/paul/vcpkg/vcpkg'
+
+alias awsps='export AWS_PROFILE=$(sed -n "s/\[profile \(.*\)\]/\1/gp" /home/paul/development/default-profile/config/.aws/config | fzf)'
